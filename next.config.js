@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-import crypto from 'crypto';
+const crypto = require('crypto');
 
 const nextConfig = {
   reactStrictMode: true,
