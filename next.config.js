@@ -29,6 +29,11 @@ module.exports = {
             key: 'x-ms-client-request-id',
             value:  crypto.randomUUID(),
           },
+          {
+            key: 'Access-Control-Allow-Origin',
+            value:  '*',
+          },          
+          
         ],
       },
     ]
