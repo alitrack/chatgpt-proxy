@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+import crypto from 'crypto';
+
 const nextConfig = {
   reactStrictMode: true,
   async rewrites() {
@@ -16,3 +18,19 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
+
+module.exports = {
+  async headers() {
+    return [
+      {
+        source: '/bing/:slug*',
+        headers: [
+          {
+            key: 'x-ms-client-request-id',
+            value:  crypto.randomUUID(),,
+          },
+        ],
+      },
+    ]
+  },
+}
